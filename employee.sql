@@ -1,0 +1,48 @@
+create database Employee;
+use Employee;
+create table Employee(EMPLOYEE_ID int Not null primary key,FIRST_NAME varchar(255),LAST_NAME varchar(255),SALARY int,JOINING_DATE date,DEPARTMENT varchar(255));
+insert into Employee(EMPLOYEE_ID,FIRST_NAME,LAST_NAME,SALARY,JOINING_DATE,DEPARTMENT)values(1,"Venkatesh","S",100000,20150828,"BANKING");
+insert into Employee(EMPLOYEE_ID,FIRST_NAME,LAST_NAME,SALARY,JOINING_DATE,DEPARTMENT)values(2,"Ragavi","P",75000,20150828,"BUSINESS");
+insert into Employee(EMPLOYEE_ID,FIRST_NAME,LAST_NAME,SALARY,JOINING_DATE,DEPARTMENT)values(3,"Gopinath","C",50000,20160203,"PHARMA");
+insert into Employee(EMPLOYEE_ID,FIRST_NAME,LAST_NAME,SALARY,JOINING_DATE,DEPARTMENT)values(4,"Dinesh","G",50000,20160203,"INSURANCE");
+insert into Employee(EMPLOYEE_ID,FIRST_NAME,LAST_NAME,SALARY,JOINING_DATE,DEPARTMENT)values(5,"Saibabu","E",40000,20170807,"SOFTWARE");
+insert into Employee(EMPLOYEE_ID,FIRST_NAME,LAST_NAME,SALARY,JOINING_DATE,DEPARTMENT)values(6,"Hasan","S",29000,20170807,"MANUFACTURING");
+insert into Employee(EMPLOYEE_ID,FIRST_NAME,LAST_NAME,SALARY,JOINING_DATE,DEPARTMENT)values(7,"Divya","P",33000,20170807,"HEALTHCARE");
+insert into Employee(EMPLOYEE_ID,FIRST_NAME,LAST_NAME,SALARY,JOINING_DATE,DEPARTMENT)values(8,"Aravindan","R",40000,20170807,"HEALTHCARE");
+insert into Employee(EMPLOYEE_ID,FIRST_NAME,LAST_NAME,SALARY,JOINING_DATE,DEPARTMENT)values(9,"Sathish","MD",45000,20160203,"AUTOMOBILE");
+insert into Employee(EMPLOYEE_ID,FIRST_NAME,LAST_NAME,SALARY,JOINING_DATE,DEPARTMENT)values(10,"Prasanth","PKP",34000,20160203,"INSURANCE");
+insert into Employee(EMPLOYEE_ID,FIRST_NAME,LAST_NAME,SALARY,JOINING_DATE,DEPARTMENT)values(11,"Vijay","R",25684,20160203,"BUSINESS");
+insert into Employee(EMPLOYEE_ID,FIRST_NAME,LAST_NAME,SALARY,JOINING_DATE,DEPARTMENT)values(12,"Sivakumar","K",54789,20160203,"SOFTWARE");
+select * from Employee;
+select FIRST_NAME,LAST_NAME from Employee;
+select * from employee ORDER BY DEPARTMENT;
+select First_Name as Employeename from Employee;
+ select upper(First_Name) from Employee;
+ select DEPARTMENT from Employee;
+ select substring("FIRST_NAME",1,3) as extractstring;
+ select position("a" in "Ragavi") ;
+ select length("FIRST_NAME") as lengthofstring;
+ SELECT replace("First_Name", "a" , "$" );
+ select EMPLOYEE_ID,concat(FIRST_NAME,LAST_NAME) as fullname from Employee;
+ select * from Employee order by FIRST_NAME ASC;
+ select * from Employee  order by FIRST_NAME DESC;
+ SELECT * FROM Employee ORDER BY First_Name ASC, Salary DESC;
+ select * from Employee where FIRST_NAME ="dinesh";
+ select * from Employee where FIRST_NAME ="dinesh" or "roy";
+ select * from Employee where FIRST_NAME <> "dinesh" or "roy";
+ select * from Employee where FIRST_NAME like "%h";
+select * from Employee where FIRST_NAME like "s%";
+ select * from Employee where FIRST_NAME like "__a";
+ select * from Employee where FIRST_NAME like "%v%";
+select * from Employee where FIRST_NAME like "%n";
+select * from employeetable where FIRST_NAME like "%n" AND char_length(FIRST_NAME)=4;
+select * from employeetable where FIRST_NAME like "j%" AND char_length(FIRST_NAME)=4;	-- q25
+select * from employeetable where SALARY >=60000;
+select * from employeetable where SALARY <=80000;
+select * from employeetable where SALARY >=50000 AND SALARY <=80000;
+select * from employeetable where FIRST_NAME in ("venkatesh","ragavi");
+select * from employeetable where year(joining_date)=2015;		-- q30
+select * from employeetable where month(joining_date)="January";
+select * from employeetable where date(joining_date)<20170101;
+select * from employeetable where date(joining_date)>20160131;
+
